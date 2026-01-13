@@ -1,12 +1,15 @@
 # aia-software-training
+
 # AIA Software Training
 
 Learn the fundamentals of transform-based low-order modelling and analysis
 
 ## Documentation
-The "required global fleet" can be estimated using a very simple model that assumes: 
+
+The "required global fleet" can be estimated using a very simple model that assumes:
+
 1. The number of global passengers flying annually is known.
-2. The number of seats flown globally per day is known. 
+2. The number of seats flown globally per day is known.
 
 ### Constants
 
@@ -14,12 +17,11 @@ The "required global fleet" can be estimated using a very simple model that assu
 | ------------- | ----- | ---- |
 | days per year | $365$ | .    |
 
-
-| Inputs                       | Value           | Unit         |Source    |
-| -------------                | -----           | ----         | ------   |
-| passengers per year          | $5 \times 10^9$ | $year^{-1}$  | ATAG[^1] |
-| seats per aircraft           | $150$           | .            |          |
-| flights per aircraft per day | $2$             | $day^{-1}$   |          |
+| Inputs                       | Value           | Unit        | Source   |
+| ---------------------------- | --------------- | ----------- | -------- |
+| passengers per year          | $5 \times 10^9$ | $year^{-1}$ | ATAG[^1] |
+| seats per aircraft           | $150$           | .           |          |
+| flights per aircraft per day | $2$             | $day^{-1}$  |          |
 
 ### Equations
 
@@ -31,4 +33,4 @@ The total required global fleet can then be calculated as a function of this int
 
 $\text{passengers per day} =\frac{\text{passengers per day}}{\text{seats per aircraft}\times{\text{flights per aircraft per day}}}$
 
-[^1]: [ATAG Facts & Figures](https://atag.org/facts-figures) 
+[^1]: [ATAG Facts & Figures](https://atag.org/facts-figures)
