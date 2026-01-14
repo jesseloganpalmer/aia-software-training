@@ -23,13 +23,26 @@ This repository uses [MkDocs](https://www.mkdocs.org/) to generate a static docu
 The source files for the site can be found in the [`docs/`](docs) directory and sit configuration in [`mkdocs.yml`](mkdocs.yml). The python-markdown-math package is further used to display equations corretly with MathJax.
 
 To render equations corretly, run:
+
+```
 pip install mkdocs python-markdown-math
+```
 
 Then, to serve the site locally, run:
 
 ```
 mkdocs serve
 uv run mkdocs serve
+```
+
+### Model/Analysis
+
+This repository contains a single analysis script, [`aviation.py`](aviation.py), which implements the simple model for global aviation.
+It outputs the required global fleet.
+To execute the analysis script, run:
+
+```
+uv run python aviation.py
 ```
 
 ## Project Description

@@ -4,15 +4,15 @@ The "required global fleet" can be estimated using a very simple model that assu
 
 ## Constants
 
-| True Constant | Value   | Unit |
-| ------------- | ------- | ---- |
-| days per year | $$365$$ | .    |
+| True Constant |  Value  | Unit |
+| :-----------: | :-----: | :--: |
+| days per year | $$365$$ |  .   |
 
-| Inputs                       | Value             | Unit          | Source   |
-| ---------------------------- | ----------------- | ------------- | -------- |
-| passengers per year          | $$5 \times 10^9$$ | $$year^{-1}$$ | ATAG[^1] |
-| seats per aircraft           | $$150$$           |               |          |
-| flights per aircraft per day | $$2$$             | $$day^{-1}$$  |          |
+|            Inputs            |       Value       |     Unit      |  Source  |
+| :--------------------------: | :---------------: | :-----------: | :------: |
+|     passengers per year      | $$5 \times 10^9$$ | $$year^{-1}$$ | ATAG[^1] |
+|      seats per aircraft      |      $$150$$      |       .       |          |
+| flights per aircraft per day |       $$2$$       | $$day^{-1}$$  |          |
 
 ## Equations
 
@@ -23,5 +23,7 @@ $$\text{passengers per day} = \frac{\text{passengers per year}}{\text{days per y
 The total required global fleet can then be calculated as a function of this intermediate value and the other inputs.
 
 $$\text{required global fleet} = \frac{\text{passengers per day}}{\text{seats per aircraft} \times \text{flights per aircraft per day}}$$
+
+$\usepackage[superscript,biblable]{cite}
 
 [^1]: [ATAG Facts & Figures](https://atag.org/facts-figures)
