@@ -3,3 +3,9 @@ site_name: My Docs
 nav:
   - Home: "index.md"
   - Aviation Model: "aviation.md"
+
+extra_javascript:
+  - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+
+markdown_extensions:
+  - mdx_math
