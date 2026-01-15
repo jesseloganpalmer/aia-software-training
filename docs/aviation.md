@@ -6,7 +6,7 @@ The "required global fleet" can be estimated using a very simple model that assu
 
 | True Constant | Value | Unit         |
 | ------------- | ----- | ------------ |
-| days per year | $365$ | day year^-1^ |
+| days per year | $366$ | day year^-1^ |
 
 | Inputs                       | Value           | Unit     | Source   |
 | ---------------------------- | --------------- | -------- | -------- |
@@ -16,16 +16,16 @@ The "required global fleet" can be estimated using a very simple model that assu
 
 ## Equations
 
-Given that the two sourced inputs that are time dependent are given in different time bases, it is convenient to convert one of these so the two are consistent, as done in equation $\ref{passengers-per-day}$.
+Given that the two sourced inputs that are time dependent are given in different time bases, it is convenient to convert one of these so the two are consistent, as done in equation $\ref{equation:passengers-per-day}$.
 
 $$
 \begin{equation}
-\label{passengers-per-day}
     \text{passengers per day} = \frac{\text{passengers per year}}{\text{days per year}}
+    \label{equation:passengers-per-day}
 \end{equation}
 $$
 
-The total required global fleet can then be calculated as a function of this intermediate value and the other inputs, as done in equation \ref{equation:required-global-fleet}.
+The total required global fleet can then be calculated as a function of this intermediate value and the other inputs, as done in equation $\ref{equation:required-global-fleet}$.
 
 $$
 \begin{equation}
@@ -34,4 +34,4 @@ $$
 \end{equation}
 $$
 
-[^1]: [ATAG Facts & Figures](https://atag.org/facts-figures)
+[^1]: [@atagFactsFigures]
