@@ -20,12 +20,13 @@ uv sync
 ### Documentation
 
 This repository uses [MkDocs](https://www.mkdocs.org/) to generate a static documentation site for users.
-The source files for the site can be found in the [`docs/`](docs) directory and sit configuration in [`mkdocs.yml`](mkdocs.yml). The python-markdown-math package is further used to display equations corretly with MathJax.
+The source files for the site can be found in the [`docs/`](docs) directory and sit configuration in [`mkdocs.yml`](mkdocs.yml). The python-markdown-math package and mkdocs material theme is further used to display equations corretly with MathJax.
 
 To render equations corretly, run:
 
 ```
 pip install mkdocs python-markdown-math
+pip install mkdocs-material
 ```
 
 Then, to serve the site locally, run:
