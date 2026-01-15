@@ -73,6 +73,6 @@ $\text{passengers per day} = \frac{\text{passengers per year}}{\text{days per ye
 
 The total required global fleet can then be calculated as a function of this intermediate value and the other inputs.
 
-$\text{passengers per day} =\frac{\text{passengers per day}}{\text{seats per aircraft}\times{\text{flights per aircraft per day}}}$
+$\text{required global fleet} =\frac{\text{passengers per day}}{\text{seats per aircraft}\times{\text{flights per aircraft per day}}}$
 
 [^1]: [ATAG Facts & Figures](https://atag.org/facts-figures)
