@@ -8,11 +8,11 @@ The "required global fleet" can be estimated using a very simple model that assu
 | ------------- | ----- | ------------ |
 | days per year | $366$ | day year^-1^ |
 
-| Inputs                       | Value           | Unit     | Source                  |
-| ---------------------------- | --------------- | -------- | ----------------------- |
-| passengers per year          | $5 \times 10^9$ | year^-1^ | ATAG[@atagFactsFigures] |
-| seats per aircraft           | $150$           | .        |                         |
-| flights per aircraft per day | $2$             | day^-1^  |                         |
+| Inputs                       | Value           | Unit     | Source   |
+| ---------------------------- | --------------- | -------- | -------- |
+| passengers per year          | $5 \times 10^9$ | year^-1^ | ATAG[^1] |
+| seats per aircraft           | $150$           | .        |          |
+| flights per aircraft per day | $2$             | day^-1^  |          |
 
 ## Equations
 
@@ -34,4 +34,4 @@ $$
 \end{equation}
 $$
 
-[^1]: [ATAG Facts & Figures](https://atag.org/facts-figures)
+[^1]: [@atagFactsFigures]
