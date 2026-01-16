@@ -4,7 +4,7 @@ version = "0.1.0"
 description = "A simple model of global aviation."
 readme = "README.md"
 requires-python = ">=3.13"
-dependencies = ["pre-commit>=4.5.1", "ruff>=0.14.13"]
+dependencies = ["pre-commit>=4.5.1", "pytest>=8.4.1", "ruff>=0.12.3"]
 
 [dependency-groups]
 dev = ["pre-commit>=4.2.0", "ruff>=0.12.3"]
