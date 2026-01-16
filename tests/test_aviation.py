@@ -12,9 +12,7 @@ from aviation.aviation import passengers_per_day, required_global_fleet
         (5_000_000_000.0, 365.0, 13_698_630.0),
     ),
 )
-def test_passengers_per_day(
-    passengers_per_year, days_per_year, expected_passengers_per_day
-):
+def test_passengers_per_day(passengers_per_year, days_per_year, expected_passengers_per_day):
     result = passengers_per_day(passengers_per_year, days_per_year)
     assert result == pytest.approx(expected_passengers_per_day)
 

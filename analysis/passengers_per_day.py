@@ -1,3 +1,5 @@
+"""Analysis to determine the number of passengers per day globally."""
+
 import aviation
 
 # Constants
