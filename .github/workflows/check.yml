@@ -32,4 +32,4 @@ jobs:
       - name: Test with pytest
         run: uv run pytest
       - name: Check with pre-commit
-        run: uv run pre-commit run --all-files
+        run: uv run pre-commit run --all-file
