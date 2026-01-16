@@ -6,7 +6,7 @@ The "required global fleet" can be estimated using a very simple model that assu
 
 | True Constant | Value | Unit         |
 | ------------- | ----- | ------------ |
-| days per year | $366$ | day year^-1^ |
+| days per year | $365$ | day year^-1^ |
 
 | Inputs                       | Value           | Unit     | Source   |
 | ---------------------------- | --------------- | -------- | -------- |
