@@ -1,4 +1,4 @@
-import src.aviation as aviation
+import aviation
 
 # Constants
 days_per_year = 365.0

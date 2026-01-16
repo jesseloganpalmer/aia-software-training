@@ -1,16 +1,17 @@
 [project]
 name = "aviation"
 version = "0.1.0"
-description = "A simple model of global aviation"
+description = "A simple model of global aviation."
 readme = "README.md"
 requires-python = ">=3.13"
-dependencies = []
+dependencies = ["pre-commit>=4.5.1", "ruff>=0.14.13"]
 
 [dependency-groups]
+dev = ["pre-commit>=4.2.0", "ruff>=0.12.3"]
 docs = ["mkdocs-bibtex>=4.4.0", "mkdocs>=1.6.1", "mkdocs-material>=9.6.15"]
 
 [tool.uv]
-default-groups = ["docs"]
+default-groups = ["dev", "docs"]
 
 [build-system]
 requires = ["uv_build>=0.7.21,<0.8.0"]
