@@ -1,3 +1,5 @@
+"""Analysis to determine the required size of the global fleet."""
+
 import aviation
 
 # Constants

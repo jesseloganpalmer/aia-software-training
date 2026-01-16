@@ -4,4 +4,4 @@
 
 A simple model of global aviation.
 
-Click [here](./aviation.md) to view model documentation.
+Click [here](./fleet.md) to view model documentation.
