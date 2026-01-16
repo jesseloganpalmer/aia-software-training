@@ -36,7 +36,8 @@ default-groups = ["dev", "docs"]
 [[tool.uv.index]]
 name = "gitlab"
 url = "https://gitlab.developers.cam.ac.uk/api/v4/projects/8115/packages/pypi/simple"
+publish-url = "https://gitlab.developers.cam.ac.uk/api/v4/projects/8115/packages/pypi"
 
 [build-system]
-requires = ["uv_build>=0.7.21,<0.8.0"]
+requires = ["uv_build>=0.7.21"]
 build-backend = "uv_build"
