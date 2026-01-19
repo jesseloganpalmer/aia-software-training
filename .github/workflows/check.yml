@@ -29,6 +29,8 @@ jobs:
         run: uv run ruff check
       - name: Format with Ruff
         run: uv run ruff format
+      - name: Static type check with mypy
+        run: uv run mypy .
       - name: Test with pytest
         run: uv run pytest
       - name: Check with pre-commit
