@@ -1,6 +1,9 @@
 """Modelling of the global fleet based on average passenger and aircraft data."""
 
-from aviation import _model as model
+import camia_model as model
+
+# from aviation import _model as model
+# Alternative import if aviation._model is directly accessible
 
 
 # Global passengers per day

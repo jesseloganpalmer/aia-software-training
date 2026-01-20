@@ -32,8 +32,8 @@ docs = [
 
 [package.metadata]
 requires-dist = [
-    { name = "camia-engine", specifier = ">=0.4.7" },
-    { name = "camia-model", specifier = ">=0.6.6" },
+    { name = "camia-engine", specifier = ">=0.4.4" },
+    { name = "camia-model", specifier = ">=0.6.4" },
     { name = "mkdocs-prebuild", specifier = ">=0.5.0" },
     { name = "mypy", specifier = ">=1.19.1" },
     { name = "pre-commit", specifier = ">=4.5.1" },

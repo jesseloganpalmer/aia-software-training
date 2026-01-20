@@ -5,13 +5,13 @@ description = "A simple model of global aviation."
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
-    "camia-engine>=0.4.7",
-    "camia-model>=0.6.6",
     "mkdocs-prebuild>=0.5.0",
     "mypy>=1.19.1",
     "pre-commit>=4.5.1",
     "pytest>=8.4.1",
     "ruff>=0.12.3",
+    "camia-engine>=0.4.4",
+    "camia-model>=0.6.4",
 ]
 
 [dependency-groups]
@@ -53,6 +53,7 @@ ignore = [
     "INP001", #added
     "PT007",  #added
     "S101",   #added
+    "ERA001", #added
 ]
 
 [tool.ruff.lint.per-file-ignores]
