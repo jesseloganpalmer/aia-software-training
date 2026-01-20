@@ -23,8 +23,8 @@ jobs:
       - name: Install dependencies
         run: uv sync
         env:
-          UV_INDEX_GITLAB_USERNAME: ${{ vars.GITLAB_INDEX_REGISTRY_TOKEN_NAME }}
-          UV_INDEX_GITLAB_PASSWORD: ${{ secrets.GITLAB_INDEX_REGISTRY_TOKEN }}
+          UV_INDEX_GITLAB_USERNAME: ${{ vars.UV_INDEX_GITLAB_USERNAME }}
+          UV_INDEX_GITLAB_PASSWORD: ${{ secrets.UV_INDEX_GITLAB_PASSWORD }}
       - name: Lint with Ruff
         run: uv run ruff check
       - name: Format with Ruff
