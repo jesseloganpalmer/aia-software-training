@@ -1,7 +1,11 @@
 """Analysis to determine the required size of the global fleet."""
 
+import camia_engine as engine
+
 import aviation
-from aviation import _engine as engine
+
+# from aviation import _engine as engine
+# Alternative import if aviation._engine is directly accessible
 
 # Constants
 days_per_year = 365.0
