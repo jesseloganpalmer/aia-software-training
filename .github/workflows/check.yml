@@ -22,10 +22,15 @@ jobs:
           python-version-file: ".python-version"
       - name: Install dependencies
         run: uv sync
+        env:
+          UV_INDEX_GITLAB_USERNAME: ${{ vars.UV_INDEX_GITLAB_USERNAME }}
+          UV_INDEX_GITLAB_PASSWORD: ${{ secrets.UV_INDEX_GITLAB_PASSWORD }}
       - name: Lint with Ruff
         run: uv run ruff check
       - name: Format with Ruff
         run: uv run ruff format
+      - name: Static type check with mypy
+        run: uv run mypy .
       - name: Test with pytest
         run: uv run pytest
       - name: Check with pre-commit

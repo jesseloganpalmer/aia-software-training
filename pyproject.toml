@@ -4,15 +4,70 @@ version = "0.1.0"
 description = "A simple model of global aviation."
 readme = "README.md"
 requires-python = ">=3.13"
-dependencies = ["pre-commit>=4.5.1", "pytest>=8.4.1", "ruff>=0.12.3"]
+dependencies = [
+    "mkdocs-prebuild>=0.5.0",
+    "mypy>=1.19.1",
+    "pre-commit>=4.5.1",
+    "pytest>=8.4.1",
+    "ruff>=0.12.3",
+]
 
 [dependency-groups]
-dev = ["pre-commit>=4.2.0", "ruff>=0.12.3"]
-docs = ["mkdocs-bibtex>=4.4.0", "mkdocs>=1.6.1", "mkdocs-material>=9.6.15"]
+dev = ["mypy>=1.17.0", "pre-commit>=4.2.0", "pytest>=8.4.1", "ruff>=0.12.3"]
+docs = [
+    "mkdocs-bibtex>=4.4.0",
+    "mkdocs-material>=9.6.15",
+    "mkdocs-prebuild>=0.5.0",
+    "mkdocstrings[python]>=0.29.1",
+]
+
+[tool.mypy]
+mypy_path = "src"
+strict = true
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["ALL"]
+ignore = [
+    "ANN1",
+    "COM812",
+    "COM819",
+    "D206",
+    "D300",
+    "E111",
+    "E114",
+    "E117",
+    "E501",
+    "ISC001",
+    "ISC002",
+    "Q000",
+    "Q001",
+    "Q002",
+    "Q003",
+    "W191",
+    "INP001", #added
+    "PT007",  #added
+    "S101",   #added
+]
+
+[tool.ruff.lint.per-file-ignores]
+"analysis/*" = ["T201"]
+"tests/*" = ["D1"]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
 
 [tool.uv]
 default-groups = ["dev", "docs"]
 
+[[tool.uv.index]]
+name = "gitlab"
+url = "https://gitlab.developers.cam.ac.uk/api/v4/projects/8115/packages/pypi/simple"
+publish-url = "https://gitlab.developers.cam.ac.uk/api/v4/projects/8115/packages/pypi"
+
 [build-system]
-requires = ["uv_build>=0.7.21,<0.8.0"]
+requires = ["uv_build>=0.7.21,<0.8"]
 build-backend = "uv_build"

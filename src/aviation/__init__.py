@@ -1,3 +1,5 @@
-__all__ = ("passengers_per_day", "required_global_fleet")
+"""A simple model of global aviation."""
 
-from aviation.aviation import passengers_per_day, required_global_fleet
+__all__ = ("passengers_per_day", "required_global_fleet", "transforms")
+
+from aviation.fleet import passengers_per_day, required_global_fleet
