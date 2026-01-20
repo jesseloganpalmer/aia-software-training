@@ -20,15 +20,19 @@ class SystemsModel:
 
         This implementation uses recursion to recursively evaluate the arguments required by a
         transform if they aren't already known. The algorithm has four steps:
+
         1. Check to see if the requested `output` is already a known member of `inputs`. If it is
         then the value can be returned without the need for any computation.
+
         2. Find the function who's name matches `output` as this is what needs to be evaluated in
         this call. If no transform can be found with a matching name then it won't be possible to
         continue evaluation and an error must be raised.
+
         3. Build a mapping of the transform's parameters to the arguments that will be used to
         evaluate the transform. If the value of the parameter isn't currently known then make a
         recursive call to `self.evaluate` and insert the parameter name-value pair back into
         `inputs` for its reuse later.
+
         4. Evaluate the transform using the keyword arguments and return the value.
         """
         # If the requested `output` has already been supplied as an input then this can just be

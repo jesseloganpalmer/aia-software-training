@@ -5,6 +5,8 @@ description = "A simple model of global aviation."
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
+    "camia-engine>=0.4.7",
+    "camia-model>=0.6.6",
     "mkdocs-prebuild>=0.5.0",
     "mypy>=1.19.1",
     "pre-commit>=4.5.1",
