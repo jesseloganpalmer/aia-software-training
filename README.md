@@ -43,7 +43,8 @@ It outputs the required global fleet.
 To execute the analysis script, run:
 
 ```
-uv run python aviation.py
+uv run python analysis/passengers_per_day.py
+uv run python analysis/required_global_fleet.py
 ```
 
 ## Project Description
@@ -72,7 +73,6 @@ Given that the two sourced imputs that are time dependent are given in different
 $\text{passengers per day} = \frac{\text{passengers per year}}{\text{days per year}}$
 
 The total required global fleet can then be calculated as a function of this intermediate value and the other inputs.
-f
 $\text{required global fleet} =\frac{\text{passengers per day}}{\text{seats per aircraft}\times{\text{flights per aircraft per day}}}$
 
 [^1]: [ATAG Facts & Figures](https://atag.org/facts-figures)

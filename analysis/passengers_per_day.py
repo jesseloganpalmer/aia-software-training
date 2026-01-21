@@ -21,4 +21,4 @@ output = "passengers_per_day"
 
 systems_model = engine.SystemsModel(aviation.transforms)
 passengers_per_day = systems_model.evaluate(inputs, output)
-print(f"{passengers_per_day=}")
+print("Passenger per day:", round(passengers_per_day))
