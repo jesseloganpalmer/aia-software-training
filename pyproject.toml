@@ -6,16 +6,18 @@ readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
     "mkdocs-prebuild>=0.5.0",
-    "mypy>=1.19.1",
-    "pre-commit>=4.5.1",
-    "pytest>=8.4.1",
-    "ruff>=0.12.3",
     "camia-engine>=0.4.4",
     "camia-model>=0.6.4",
 ]
 
 [dependency-groups]
-dev = ["mypy>=1.17.0", "pre-commit>=4.2.0", "pytest>=8.4.1", "ruff>=0.12.3"]
+dev = [
+    "mypy>=1.17.0",
+    "pre-commit>=4.2.0",
+    "pytest>=8.4.1",
+    "ruff>=0.12.3",
+    "pytest-camia>=0.3.3",
+]
 docs = [
     "mkdocs-bibtex>=4.4.0",
     "mkdocs-material>=9.6.15",
