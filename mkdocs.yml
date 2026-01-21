@@ -4,23 +4,78 @@ theme:
   name: material
 
 plugins:
+  - autorefs
+  - markdown-exec
   - search
   - bibtex:
       bib_file: "https://api.zotero.org/groups/5782724/collections/G847TDER/items?format=bibtex"
+  - mkdocstrings:
+      handlers:
+        python:
+          paths: [src]
+          options:
+            allow_inspection: true
+            annotations_path: source
+            docstring_options:
+              ignore_init_summary: true
+              returns_named_value: false
+              returns_type_in_property_summary: true
+            docstring_section_style: table
+            heading_level: 1
+            inherited_members: true
+            merge_init_into_class: true
+            separate_signature: true
+            show_root_full_path: false
+            show_root_heading: true
+            show_signature_annotations: true
+            show_symbol_type_heading: true
+            show_symbol_type_toc: true
+            signature_crossrefs: true
+            summary: true
   - mkdocs-prebuild:
       base_path: ["."]
+
 nav:
   - Home: "index.md"
   - Aviation Model: "fleet.md"
 
 extra_javascript:
-  - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML
-  - ../javascripts/mathjax.js
-  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+  - javascripts/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+extra_css:
+  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css
 
 markdown_extensions:
+  - abbr
+  - admonition
   - attr_list
+  - def_list
+  - footnotes
   - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
   - pymdownx.tilde
   - pymdownx.arithmatex:
       generic: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.snippets:
+      check_paths: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+  - pymdownx.tabbed:
+      alternate_style: true
+  - toc:
+      permalink: true
+      toc_depth: 3
+
+strict: true

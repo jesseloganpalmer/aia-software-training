@@ -2,6 +2,25 @@
 
 The "required global fleet" can be estimated using a very simple model that assumes the number of passengers flying globally annually is known, along with and estimation of the number of seats flown globally per day.
 
+---
+
+```mermaid
+flowchart LR
+    A["Passengers per Year"] --> B["Passengers per Day"]
+    C[" Days per Year"] --> B
+    B --> D["Required Global Fleet"]
+    E["Flights per Aircraft per Day"] --> D
+    F["Seats per Aircraft"] --> D
+
+    style C fill:#FFFFFF00, stroke:#FFFFFF00;
+
+    classDef teal fill:#85B09A,stroke:#3D5E4D,stroke-width:1px
+    classDef cherry fill:#ffa9a0,stroke:#b01000,stroke-width:1px
+
+    class B,D teal
+
+```
+
 ## Constants
 
 | True Constant | Value | Unit         |
@@ -34,4 +53,4 @@ $$
 \end{equation}
 $$
 
-[^1]: [@atagFactsFigures]
+[^1]: @atagFactsFigures
