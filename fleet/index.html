@@ -523,6 +523,21 @@
 
 <h1 id="aviation">Aviation<a class="headerlink" href="#aviation" title="Permanent link">&para;</a></h1>
 <p>The "required global fleet" can be estimated using a very simple model that assumes the number of passengers flying globally annually is known, along with and estimation of the number of seats flown globally per day.</p>
+<hr />
+<pre class="mermaid"><code>flowchart LR
+    A["Passengers per Year"] --&gt; B["Passengers per Day"]
+    C[" Days per Year"] --&gt; B
+    B --&gt; D["Required Global Fleet"]
+    E["Flights per Aircraft per Day"] --&gt; D
+    F["Seats per Aircraft"] --&gt; D
+
+    style C fill:#FFFFFF00, stroke:#FFFFFF00;
+
+    classDef teal fill:#85B09A,stroke:#3D5E4D,stroke-width:1px
+    classDef cherry fill:#ffa9a0,stroke:#b01000,stroke-width:1px
+
+    class B,D teal
+</code></pre>
 <h2 id="constants">Constants<a class="headerlink" href="#constants" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
