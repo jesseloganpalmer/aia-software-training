@@ -38,8 +38,7 @@ uv run mkdocs serve
 
 ### Model/Analysis
 
-This repository contains a single analysis script, [`aviation.py`](aviation.py), which implements the simple model for global aviation.
-It outputs the required global fleet.
+This repository contains two analysis scripts, [`passengers_per_day.py`](analysis/passengers_per_day.py), which estimates the number of passengers flying globally per day, and [`required_global_fleet.py`](analysis/required_global_fleet.py), which implements the simple model for global aviation. It outputs the required global fleet.
 To execute the analysis script, run:
 
 ```
