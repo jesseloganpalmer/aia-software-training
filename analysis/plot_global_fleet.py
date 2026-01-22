@@ -12,7 +12,7 @@ from aviation.units import aircraft, journey, passenger
 
 days_per_year = 365.0 * day / year
 
-# flights_per_aircraft_per_day = 3.0 * journey / (aircraft * day)
+
 flights_per_aircraft_per_day_raw = np.arange(1.0, 4.0, 1.0)
 flights_per_aircraft_per_day: list[Any] = [
     f * journey / (aircraft * day) for f in flights_per_aircraft_per_day_raw
@@ -77,6 +77,18 @@ for f_idx, flights_value in enumerate(flights_per_aircraft_per_day_values):
                 visible=is_visible,
             )
         )
+
+# Add vertical line showing current passenger levels (approximately 5B passengers/year = 13.7M/day)
+current_passengers_per_day = 5_000_000_000 / 365.0  # ~13.7 million per day
+fig.add_vline(
+    x=current_passengers_per_day,
+    line_dash="dash",
+    line_color="red",
+    line_width=2,
+    annotation_text="Current Scenario (~13.7M/day)",
+    annotation_position="top right",
+    annotation=dict(font_size=12, font_color="red"),  # noqa: C408
+)
 
 # Create slider steps for seats_per_aircraft
 # Each step shows all flights for that seat value

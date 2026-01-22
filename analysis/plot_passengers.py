@@ -49,4 +49,16 @@ fig.update_layout(
     title_font_size=20,
     hoverlabel=dict(font_size=14),  # noqa: C408
 )
+
+# Add vertical line showing current passenger levels (approximately 5B passengers/year = 13.7M/day)
+current_passengers_per_day = 5_000_000_000  # ~13.7 million per day
+fig.add_vline(
+    x=current_passengers_per_day,
+    line_dash="dash",
+    line_color="red",
+    line_width=2,
+    annotation_text="Current Scenario (~5B/year)",
+    annotation_position="top right",
+    annotation=dict(font_size=12, font_color="red"),  # noqa: C408
+)
 fig.write_html("docs/assets/plot_passengers.html")
