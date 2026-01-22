@@ -41,8 +41,7 @@ def required_global_fleet(
     Args:
       passengers_per_day: The number of passengers flying per day globally.
       seats_per_aircraft: The average number of seats on a commercial aircraft.
-      flights_per_aircraft_per_day: The average number of flights a commercial aircraft
-      makes on average per day.
+      flights_per_aircraft_per_day: The average number of flights a commercial aircraft makes on average per day.
 
     """
     aircraft_per_journey = 1.0 * aircraft / journey
