@@ -43,8 +43,8 @@ seats_per_aircraft_values = [q.value for q in seats_per_aircraft]
 flights_per_aircraft_per_day_values = [q.value for q in flights_per_aircraft_per_day]
 
 # Create traces for each combination of seats_per_aircraft and flights_per_aircraft_per_day
-DEFAULT_SEATS_INDEX = 3  # 200 seats per aircraft
-DEFAULT_FLIGHTS_INDEX = 2  # 3 flights per aircraft per day
+DEFAULT_SEATS_INDEX = 3  # 50 seats per aircraft
+DEFAULT_FLIGHTS_INDEX = 2  # 1 flight per aircraft per day
 fig = go.Figure()
 for f_idx, flights_value in enumerate(flights_per_aircraft_per_day_values):
     for s_idx, seats_value in enumerate(seats_per_aircraft_values):
@@ -85,9 +85,9 @@ for s_idx, seats_value in enumerate(seats_per_aircraft_values):
 
 sliders = [
     dict(  # noqa: C408
-        active=0,
+        active=DEFAULT_SEATS_INDEX,
         yanchor="top",
-        y=0,
+        y=-0.50,
         xanchor="left",
         x=0.1,
         len=0.75,
@@ -124,9 +124,9 @@ for f_idx, flights_value in enumerate(flights_per_aircraft_per_day_values):
 
 sliders.append(
     dict(  # noqa: C408
-        active=0,
+        active=DEFAULT_FLIGHTS_INDEX,
         yanchor="bottom",
-        y=-0.15,
+        y=-0.50,
         xanchor="left",
         x=0.1,
         len=0.75,
@@ -146,8 +146,9 @@ fig.update_layout(
     sliders=sliders,
     xaxis_title="Passengers per year",
     yaxis_title="Required Global Fleet",
-    yaxis=dict(range=[0, 200000]),  # noqa: C408
-    title="Global Fleet Required (Seats per Aircraft: 50)",
+    xaxis=dict(range=[0, 10_500_000_000], dtick=1_000_000_000),  # noqa: C408
+    yaxis=dict(range=[0, 200000], dtick=20000),  # noqa: C408
+    title="Global Fleet Required",
     font=dict(size=14),  # noqa: C408
     title_font_size=20,
     hoverlabel=dict(font_size=14),  # noqa: C408
