@@ -2,9 +2,8 @@
 
 __all__ = ("aircraft", "journey", "passenger")
 
-import camia_model as model
-import camia_model.units
+from camia_model.units import DIMENSIONLESS, Unit
 
-aircraft = model.units.Unit.new_named("aircraft", relation=model.units.DIMENSIONLESS)
-journey = model.units.Unit.new_named("journey", relation=model.units.DIMENSIONLESS)
-passenger = model.units.Unit.new_named("passenger", relation=model.units.DIMENSIONLESS)
+aircraft = Unit.new_named("aircraft", relation=DIMENSIONLESS)
+journey = Unit.new_named("journey", relation=DIMENSIONLESS)
+passenger = Unit.new_named("passenger", relation=DIMENSIONLESS)

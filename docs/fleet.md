@@ -54,3 +54,7 @@ $$
 $$
 
 [^1]: @atagFactsFigures
+
+## Interactive Visualization
+
+<iframe src="../assets/plot_passengers.html" width="100%" height="600px" style="border:none;"></iframe>

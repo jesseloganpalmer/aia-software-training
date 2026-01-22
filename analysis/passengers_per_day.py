@@ -12,6 +12,8 @@ from aviation.units import passenger
 # Constants
 days_per_year = 365.0 * day / year
 passengers_per_year = 5_000_000_000.0 * passenger / year
+print(passengers_per_year)
+
 
 inputs = {
     "days_per_year": days_per_year,
