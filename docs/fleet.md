@@ -33,7 +33,7 @@ flowchart LR
 | seats per aircraft           | $150$           | .        |          |
 | flights per aircraft per day | $2$             | day^-1^  |          |
 
-## Equations
+## Equations and Analysis
 
 Given that the two sourced inputs that are time dependent are given in different time bases, it is convenient to convert one of these so the two are consistent, as done in equation $\ref{equation:passengers-per-day}$.
 
@@ -44,6 +44,10 @@ $$
 \end{equation}
 $$
 
+!!! validation
+
+<iframe src="../assets/plot_passengers.html" width="100%" height="600px" style="border:none;"></iframe>
+
 The total required global fleet can then be calculated as a function of this intermediate value and the other inputs, as done in equation $\ref{equation:required-global-fleet}$.
 
 $$
@@ -53,10 +57,8 @@ $$
 \end{equation}
 $$
 
-## Modeling Analysis
+!!! validation
 
-<iframe src="../assets/plot_passengers.html" width="100%" height="600px" style="border:none;"></iframe>
-
-<iframe src="../assets/plot_fleet.html" width="100%" height="1000px" style="border:none;"></iframe>
+<iframe src="../assets/plot_fleet.html" width="100%" height="850px" style="border:none;"></iframe>
 
 [^1]: @atagFactsFigures

@@ -13,13 +13,13 @@ from aviation.units import aircraft, journey, passenger
 days_per_year = 365.0 * day / year
 
 # flights_per_aircraft_per_day = 3.0 * journey / (aircraft * day)
-flights_per_aircraft_per_day_raw = np.arange(1.0, 6.0, 1.0)
+flights_per_aircraft_per_day_raw = np.arange(1.0, 4.0, 1.0)
 flights_per_aircraft_per_day: list[Any] = [
     f * journey / (aircraft * day) for f in flights_per_aircraft_per_day_raw
 ]
 
 # seats_per_aircraft = 200.0 * passenger / aircraft
-seats_per_aircraft_raw = np.arange(50.0, 1050.0, 50.0)
+seats_per_aircraft_raw = np.arange(50.0, 550.0, 50.0)
 seats_per_aircraft: list[Any] = [s * passenger / aircraft for s in seats_per_aircraft_raw]
 
 passengers_per_year_raw = np.arange(0.0, 10_500_000_000.0, 500_000_000.0)
@@ -36,6 +36,19 @@ output = "required_global_fleet"
 systems_model = engine.SystemsModel(aviation.transforms)
 required_global_fleet = systems_model.evaluate(inputs, output)
 
+inputs = {
+    "days_per_year": days_per_year,
+    "passengers_per_year": passengers_per_year,
+}
+output = "passengers_per_day"
+
+systems_model = engine.SystemsModel(aviation.transforms)
+passengers_per_day = systems_model.evaluate(inputs, output)
+
+
+# Extract numeric values from Quantity objects
+passengers_per_day_values = [q.value for q in passengers_per_day.values]
+
 
 # Extract numeric values from passengers_per_year for x-axis
 passengers_per_year_values = [q.value for q in passengers_per_year]
@@ -49,18 +62,18 @@ DEFAULT_FLIGHTS_INDEX = 0
 fig = go.Figure()
 for f_idx, flights_value in enumerate(flights_per_aircraft_per_day_values):
     for s_idx, _seats_value in enumerate(seats_per_aircraft_values):
-        # Array is indexed as [passengers_per_year, seats_per_aircraft, flights_per_aircraft_per_day]
+        # Array is indexed as [passengers_per_day, seats_per_aircraft, flights_per_aircraft_per_day]
         fleet_values = [q.value for q in required_global_fleet.values[:, s_idx, f_idx]]
         # Show all traces for default seats index, hide others
         is_visible = s_idx == DEFAULT_SEATS_INDEX
         fig.add_trace(
             go.Scatter(
-                x=passengers_per_year_values,
+                x=passengers_per_day_values,
                 y=fleet_values,
                 mode="lines+markers",
                 name=f"Flights: {flights_value:.0f}",
                 marker={"size": 8, "line": {"width": 1}},
-                hovertemplate="<b>Passengers per year:</b> %{x:.2e}<br><b>Required Fleet:</b> %{y:.0f}<extra></extra>",
+                hovertemplate="<b>Passengers per day:</b> %{x:.2e}<br><b>Required Fleet:</b> %{y:.0f}<extra></extra>",
                 visible=is_visible,
             )
         )
@@ -99,9 +112,9 @@ sliders = [
         ticklen=5,
         currentvalue=dict(  # noqa: C408
             prefix="Seats per Aircraft: ",
-            visible=False,
+            visible=True,
             xanchor="right",
-            font=dict(size=12),  # noqa: C408
+            font=dict(size=10),  # noqa: C408
         ),
         steps=steps,
     )
@@ -109,9 +122,9 @@ sliders = [
 
 fig.update_layout(
     sliders=sliders,
-    xaxis_title="Passengers per year",
+    xaxis_title="Passengers per day",
     yaxis_title="Required Global Fleet",
-    xaxis=dict(range=[0, 10_500_000_000], dtick=1_000_000_000),  # noqa: C408
+    xaxis=dict(range=[0, 28_000_000], dtick=2_000_000),  # noqa: C408
     yaxis=dict(range=[0, 600000], dtick=50000),  # noqa: C408
     title="Global Fleet Required",
     font=dict(size=14),  # noqa: C408
