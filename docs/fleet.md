@@ -53,8 +53,10 @@ $$
 \end{equation}
 $$
 
-[^1]: @atagFactsFigures
-
-## Interactive Visualization
+## Modeling Analysis
 
 <iframe src="../assets/plot_passengers.html" width="100%" height="600px" style="border:none;"></iframe>
+
+<iframe src="../assets/plot_fleet.html" width="100%" height="600px" style="border:none;"></iframe>
+
+[^1]: @atagFactsFigures
