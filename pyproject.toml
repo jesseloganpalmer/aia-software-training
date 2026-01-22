@@ -34,6 +34,10 @@ docs = [
 mypy_path = "src"
 strict = true
 
+[[tool.mypy.overrides]]
+module = "plotly.*"
+ignore_missing_imports = true
+
 [tool.ruff]
 line-length = 100
 target-version = "py312"
